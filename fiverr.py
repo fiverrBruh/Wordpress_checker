@@ -33,11 +33,14 @@ for service in service_list:
 		s_b.send_keys("")
 		s_b.send_keys(search_term)
 		s_b.send_keys(Keys.ENTER)
-		website = browser.find_elements_by_xpath("//a[@class='yYlJEf L48Cpd']")
-		if(website):
-			for e in website:
+		website_tag = browser.find_elements_by_xpath("//div[@class='dbg0pd']")
+		if(website_tag):
+			for e in website_tag:
+				e.click()
+				time.sleep(3)
+				website = browser.find_element_by_xpath('//a[@class="LJOFid ab_button"]')
+				url = website.get_attribute('href')
 				emails = []
-				url = e.get_attribute('href')
 				emails = get_email(url)
 				if emails:
 					for email in emails:

@@ -8,6 +8,7 @@ from selenium.webdriver.common.keys import Keys
 import os.path
 
 def check(url):
+	print("1) checking for the url(for wordpress) --> " + url)
 	current_dir = os.path.dirname(os.path.abspath(__file__)) 
 	val = str(current_dir) + "\chromedriver"
 	browser = webdriver.Chrome(str(val))

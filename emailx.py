@@ -19,7 +19,7 @@ def get_email(urli):
 	current_dir = os.path.dirname(os.path.abspath(__file__)) 
 	val = str(current_dir) + "\chromedriver"
 	driver = webdriver.Chrome(str(val))
-	print("fucking here urli\n "+urli)
+	print("2) checking for mail for --> "+urli)
 	driver.get(str(urli))
 	urlInput = urli
 
